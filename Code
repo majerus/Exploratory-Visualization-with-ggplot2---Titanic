@@ -1,5 +1,11 @@
 # Exploratory Visualization using ggplot2 - Titanic
-#9-23-2018
+# 9-23-2018
+
+# RM - Remember to load your libraries (they do this for you on DataCamp)
+library(tidyverse)
+
+# RM - I added this to load the data that was provided in DataCamp
+titanic <- read.table("titanic.txt")
 
 # Check the structure of titanic
 str(titanic)
@@ -22,3 +28,5 @@ posn.jd <- position_jitterdodge(0.5, 0, 0.6)
 ggplot(titanic, aes(x = Pclass, y = Age,  color = Sex)) +
   geom_point(size = 3, alpha = 0.5, position = posn.jd) +
   facet_grid(.~ Survived)
+
+
